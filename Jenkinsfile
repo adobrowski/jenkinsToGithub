@@ -1,5 +1,7 @@
 pipeline {
-    label 'Ansible'
+    agent {
+      label 'Ansible'
+    }
     options {
         buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '10'))
         timeout(time: 12, unit: 'HOURS')
